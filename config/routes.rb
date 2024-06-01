@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get "/articles", to: "articles#index"
+  get "articles/index"
+  get "articles/show"
+  get "articles/new"
+  get "articles/edit"
   resources :articles
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -7,3 +7,38 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# db/seeds.rb
+
+Article.create!(
+  [
+    {
+      title: "First Article",
+      body: "This is the body of the first article.",
+      published: true
+    },
+    {
+      title: "Second Article",
+      body: "This is the body of the second article.",
+      published: false
+    },
+    {
+      title: "Third Article",
+      body: "This is the body of the third article.",
+      published: true
+    },
+    {
+      title: "Fourth Article",
+      body: "This is the body of the fourth article.",
+      published: false
+    },
+    {
+      title: "Fifth Article",
+      body: "This is the body of the fifth article.",
+      published: true
+    }
+  ]
+)
+
+puts "Seeded #{Article.count} articles."
+
