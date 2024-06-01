@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "articles/new"
   get "articles/edit"
   resources :articles
+  root to: 'articles#index'
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
