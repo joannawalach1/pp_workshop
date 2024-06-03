@@ -1,0 +1,31 @@
+<div class="container mx-auto">
+  <h1 class="text-3xl font-bold mb-4">Articles</h1>
+
+  <%= link_to 'New Article', new_article_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4" %>
+
+  <table class="w-full border-collapse border border-blue-500">
+    <thead class="bg-blue-100">
+      <tr>
+        <th class="border border-blue-500 px-4 py-2">Title</th>
+        <th class="border border-blue-500 px-4 py-2">Body</th>
+        <th class="border border-blue-500 px-4 py-2">Published</th>
+        <th class="border border-blue-500 px-4 py-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td class="border border-blue-500 px-4 py-2"><%= article.title %></td>
+          <td class="border border-blue-500 px-4 py-2"><%= article.body %></td>
+          <td class="border border-blue-500 px-4 py-2"><%= article.published %></td>
+          <td class="border border-blue-500 px-4 py-2">
+            <%= link_to 'Show', article_path(article), class: "bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded mr-2" %>
+            <%= link_to 'Edit', edit_article_path(article), class: "bg-yellow-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded mr-2" %>
+            <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>
+</td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
